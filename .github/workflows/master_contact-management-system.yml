@@ -31,9 +31,9 @@ jobs:
           path: '${{ github.workspace }}/target/*.jar'
 
         env:
-          SPRING_DATASOURCE_URL: ${{ secrets.DATABASE_URL }}
-          SPRING_DATASOURCE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
-          SPRING_DATASOURCE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
+          DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
 
   deploy:
     runs-on: ubuntu-latest
@@ -56,3 +56,8 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4296E2B71E784AF0814605F6C020F015 }}
           package: '*.jar'
+
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
+          DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
