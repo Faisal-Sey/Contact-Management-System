@@ -58,4 +58,10 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
+### API Documentation
+
+You can find the API documentation for this project in the [Postman Collection](https://documenter.getpostman.com/view/12600570/2s9YyzbHBK) provided.
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://documenter.getpostman.com/view/12600570/2s9YyzbHBK)
+
 Thank you for using the Contact Management System! If you have any questions or need further assistance, feel free to reach out.
