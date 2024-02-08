@@ -22,6 +22,11 @@ jobs:
           java-version: '17'
 
       - name: Build with Maven
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
+          DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+          ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
         run: mvn clean install
 
       - name: Upload artifact for deployment job
@@ -44,6 +49,11 @@ jobs:
           name: java-app
 
       - name: Deploy to Azure Web App
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
+          DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+          ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
